@@ -28,7 +28,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <main>
-      <div className="flex fixed bg-white justify-between w-full items-center px-[40px] py-[20px] border shadow-sm">
+      <div className="flex fixed bg-white justify-between w-full items-center px-[40px] py-[20px] border-b shadow-sm">
         <div className="flex gap-5 items-center">
           <div className="md:flex gap-5 hidden">
             {navs.map((el) => (
@@ -96,14 +96,12 @@ const Header = () => {
         )}
       </div>
       {toggle ? (
-        <>
-          {" "}
-          <div className="fixed mt-[-80px] ">
-            <div className=" md:grid flex flex-wrap md:grid-cols-3 w-[100vw] overflow-x-auto h-[100vh]">
-              <div className="md:col-span-2 w-[10%] md:w-full  col-span-1 bg-gray-400 bg-opacity-20"></div>
-              <div className="relative w-full col-span-3 md:col-span-1 bg-gray-700 p-3">
+        <div className=" mt-[-80px] ">
+          <div className="fixed">
+            <div className=" md:grid  flex-wrap md:grid-cols-3 w-[100vw] bg-gray-700 overflow-x-auto max-h-full min-h-[100vh]">
+              <div className="md:col-span-2 w-[10%] relative md:w-full  col-span-1 bg-gray-400 bg-opacity-20"></div>
+              <div className=" w-full col-span-3 md:col-span-1  h-[100vh]  p-3">
                 <div className="flex justify-end p-5">
-                  {" "}
                   <h1
                     onClick={() => {
                       setToggle(!toggle);
@@ -114,7 +112,7 @@ const Header = () => {
                   </h1>
                 </div>
 
-                <div>
+                <div className="">
                   {cart.length === 0 ? (
                     <h1 className="text-[12px] text-gray-300 flex justify-center items-center mt-6">
                       You Don't have any Item in Cart
@@ -165,7 +163,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <></>
       )}
