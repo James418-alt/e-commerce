@@ -122,7 +122,10 @@ const Header = () => {
                   ) : (
                     <>
                       {cart.map((el: any) => (
-                        <div className="text-gray-200 px-[20px] text-[12px] font-normal mb-7 flex justify-between items-center">
+                        <div
+                          key={el.id}
+                          className="text-gray-200 px-[20px] text-[12px] font-normal mb-7 flex justify-between items-center"
+                        >
                           <div className="flex gap-3 items-center">
                             <Image
                               className=" h-[100px] w-[80px] object-cover object-right bg-gray-100"
